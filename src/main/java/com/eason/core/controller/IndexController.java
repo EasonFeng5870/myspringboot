@@ -1,5 +1,7 @@
 package com.eason.core.controller;
 
+import com.eason.core.service.IndexService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,9 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/index")
 public class IndexController {
 
+    @Autowired
+    private IndexService indexService;
+
     @ResponseBody
     @RequestMapping(value = "/init", method = RequestMethod.GET)
     public String init(){
+        indexService.indexService();
         return "--";
     }
 
