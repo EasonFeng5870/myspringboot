@@ -4,6 +4,9 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * spring boot starter
@@ -13,6 +16,9 @@ import org.springframework.context.annotation.ComponentScan;
 //@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @SpringBootApplication
 @ComponentScan(value = "com.eason.core")
+@EnableSwagger2
+@EnableWebMvc
+@Configuration
 public class SpringbootApplication {
 
 	public static void main(String[] args) {
